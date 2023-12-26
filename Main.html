@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITNESS X</title>
+  </head>
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 40px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .logo {
+      font-size: 3.5vw;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 2vw;
+
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #f00;
+    }
+
+
+
+    #trainers {
+      background-color: #222;
+      color: #fff;
+      padding: 50px;
+    }
+
+    .trainer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .trainer {
+      flex-basis: 23%;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .trainer img {
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 15px;
+    }
+
+    .trainer h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .trainer p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    /* Facilities Section */
+    .facility-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px 0;
+    }
+
+    .facility-description {
+      flex-basis: 50%;
+      padding-right: 30px;
+    }
+
+    .facility-description h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .facility-description p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .facility-image {
+      flex-basis: 40%;
+    }
+
+    .facility-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    #heading_facilities {
+      text-align: center;
+      padding: 5vw;
+      color: blue;
+      font-size: 4vw;
+    }
+
+
+
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .membership-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 50px 0;
+    }
+
+
+    #contact {
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #contact p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+
+    #contact label {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    #contact input,
+    #contact textarea {
+      font-size: 1.2rem;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    #contact input[type="submit"] {
+      font-size: 1.2rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #contact input[type="submit"]:hover {
+      background-color: #f00;
+    }
+
+    .contact_submit {
+      height: 3vw;
+    }
+
+
+    #feedback {
+      background-color: #333;
+      color: #fff;
+      padding: 40px;
+    }
+
+    #feedback h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #feedback p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    #feedback form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+
+    #feedback label {
+      font-size: 1vw;
+      margin-bottom: 10px;
+    }
+
+    #feedback input,
+    #feedback textarea {
+      font-size: 1vw;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    #feedback input[type="submit"] {
+      font-size: 1.2rem;
+      background-color: #f31313;
+    }
+  </style>
+
+  <body>
+
+
+    <nav class="navbar">
+      <a href="/" class="logo">FITNESS X</a>
+      <ul class="nav-links">
+        <li><a href="#facilities">Facilities</a></li>
+      </ul>
+    </nav>
+
+
+    <section id="trainers">
+      <h2>Our Trainers</h2>
+      <div class="trainer-container">
+        <div class="trainer">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShOp8opH_MXo0eMBOp1As0R_ywO9UzIK6ECg&usqp=CAU"
+            alt="Male Trainer">
+          <h3>John Doe</h3>
+          <p>John is a certified personal trainer with over 10 years of experience in the fitness industry. He
+            specializes in weightlifting and functional training, and is dedicated to helping his clients achieve their
+            fitness goals.</p>
+        </div>
+        <div class="trainer">
+          <img
+            src="https://media.istockphoto.com/id/856797530/photo/portrait-of-a-beautiful-woman-at-the-gym.jpg?s=612x612&w=0&k=20&c=0wMa1MYxt6HHamjd66d5__XGAKbJFDFQyu9LCloRsYU="
+            alt="Female Trainer">
+          <h3>Jane Smith</h3>
+          <p>Jane is a fitness enthusiast who turned her passion into a career. She is a certified personal trainer and
+            yoga instructor, and believes in a holistic approach to fitness that incorporates both physical and mental
+            well-being.</p>
+        </div>
+        <div class="trainer">
+          <img src="https://i.pinimg.com/originals/22/09/73/220973be63c2af8a6d39983f72463ea4.jpg" alt="Male Dietitian">
+          <h3>Mark Johnson</h3>
+          <p>Mark is a registered dietitian with a background in sports nutrition. He helps his clients optimize their
+            nutrition to support their fitness goals, and believes in a balanced and sustainable approach to healthy
+            eating.</p>
+        </div>
+        <div class="trainer">
+          <img
+            src="https://img.freepik.com/premium-photo/young-female-fitness-personal-trainer-with-notepad-standing-gym-with-thumb-up_146671-31568.jpg"
+            alt="Female Dietitian">
+          <h3>Samantha Lee</h3>
+          <p>Samantha is a registered dietitian and certified personal trainer with a passion for helping people achieve
+            optimal health and wellness. She takes a personalized approach to nutrition and fitness, and works with her
+            clients to develop sustainable habits that fit their individual lifestyles.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <section id="facilities">
+      <h2 id="heading_facilities">Facilities</h2>
+
+
+      <section class="facility-section">
+        <div class="facility-description">
+          <h2>Crossfit</h2>
+          <p>Our crossfit section is designed for serious lifters who want to push their limits and build strength. We
+            have a wide range of equipment, including squat racks, deadlift platforms, and bench presses, as well as a
+            variety of weights and bars. Whether you're a competitive powerlifter or just looking to build muscle and
+            improve your strength, our crossfit section has everything you need to reach your goals.</p>
+        </div>
+        <div class="facility-image">
+          <img src="https://pixahive.com/wp-content/uploads/2020/08/Modern-Gym-Interior-11458-pixahive-1024x669.jpg"
+            alt="Powerlifting Section">
+        </div>
+      </section>
+
+      <section class="facility-section">
+        <div class="facility-description">
+          <h2>Cardio Section</h2>
+          <p>Our cardio section is perfect for anyone looking to get in shape, lose weight, or improve their
+            cardiovascular health. We have a variety of machines, including treadmills, ellipticals, and stationary
+            bikes, as well as free weights and resistance bands. Whether you prefer steady-state cardio or
+            high-intensity interval training, our cardio section has everything you need to achieve your fitness goals.
+          </p>
+        </div>
+        <div class="facility-image">
+          <img
+            src="https://pulsefit.bg/uploads/cache/original/public/uploads/media-manager/app-modules-zones-models-zone/40/4404/pulse_sv.vlas--10.jpg"
+            alt="Cardio Section">
+        </div>
+      </section>
+
+      <section class="facility-section">
+        <div class="facility-description">
+          <h2>Steam Bath</h2>
+          <p>Our steam bath is the perfect way to relax and recover after a tough workout. The heat and steam can help
+            soothe sore muscles, improve circulation, and reduce stress. Our steam bath is spacious and comfortable,
+            with plenty of room to stretch out and unwind. Whether you're looking to recover from a workout or simply
+            enjoy some relaxation time, our steam bath is the perfect place to do it.</p>
+        </div>
+        <div class="facility-image">
+          <img
+            src="https://www.mirabell.it/fileadmin/_processed_/b/6/csm_aurora-sauna-5-sterne-wellness-suedtirol-mirabell-0154_cf27faa88e.jpg"
+            alt="Steam Bath">
+        </div>
+      </section>
+    </section>
+
+
+
+
+
+
+    <h2 class="membership-heading" id="membership">Membership Plans</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Basic</td>
+          <td>Access to gym and cardio section</td>
+          <td>$30/month</td>
+        </tr>
+        <tr>
+          <td>Silver</td>
+          <td>Access to gym, cardio section, and powerlifting section</td>
+          <td>$50/month</td>
+        </tr>
+        <tr>
+          <td>Gold</td>
+          <td>Access to gym, cardio section, powerlifting section, and steam bath</td>
+          <td>$70/month</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Feel free to contact us with any questions, comments or concerns.</p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+        <button type="submit" class="contact_submit">Submit</button>
+      </form>
+    </section>
+
+
+    <section id="feedback">
+      <h2>Feedback</h2>
+      <p>We appreciate your feedback. Let us know how we're doing.</p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>

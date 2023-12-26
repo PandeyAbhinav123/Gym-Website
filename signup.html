@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+  </head>
+
+  <style>
+    .header {
+      font-size: 5vw;
+      margin-left: 30vw;
+    }
+
+    .register {
+      margin-left: 40vw;
+    }
+
+    .form1 {
+      font-size: 1.5vw;
+    }
+
+    #uname {
+      padding: .25vw;
+      font-size: 1.5vw
+    }
+
+    #mail {
+      padding: .25vw;
+      font-size: 1.5vw
+    }
+
+    #contact {
+      padding: .25vw;
+      font-size: 1.5vw
+    }
+
+    #pass_word {
+      padding: .25vw;
+      font-size: 1.5vw
+    }
+
+    .btn2 {
+      margin-left: 5vw;
+      margin-top: 1.5vw;
+      font-size: 1.5vw;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .para1 {
+      font-size: 2vw;
+
+    }
+
+
+    body {
+      background-image: url('https://i.pinimg.com/originals/71/60/c9/7160c9f131fe0685678a5749e264e054.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+
+
+
+  <body>
+
+
+    <h1 class="header">
+      Create an Account
+    </h1>
+
+
+    <div class="register">
+      <form class="form1" method="POST">
+        <label for="uname">Username</label><br>
+        <input type="text" id="uname" name="Uname"> <br>
+        <label for="mail">Email</label><br>
+        <input type="email" id="mail" name="Email"><br>
+        <label for="contact">Phone</label><br>
+        <input type="tel" name="Phone" id="contact" pattern="[1-9]{10}"><br>
+        <label for="pass_word">Password</label><br>
+        <input type="password" id="pass_word" name="Password"><br>
+      </form>
+      <a href="main.html">
+        <button type="submit" onclick="myFunction()" class="btn2" id="register-btn"> Register</button>
+      </a>
+
+      <p class="para1">Already have account? <a href="login.html" title="Sign in">Sign In</a> </p>
+    </div>
+
+    <script>
+
+      function myFunction() {
+
+
+        const username = document.getElementById('uname').value;
+        const email = document.getElementById('mail').value;
+        const phone = document.getElementById('contact').value;
+        const password = document.getElementById('pass_word').value;
+
+        const formData = {
+          username: username,
+          email: email,
+          phone: phone,
+          password: password
+        };
+
+        localStorage.setItem('formData', JSON.stringify(formData));
+
+
+
+        const form1 = document.getElementsByClassName('form1');
+        form1.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+        });
+      }
+    </script>
+
+
+  </body>
+
+</html>

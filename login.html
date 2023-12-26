@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+  </head>
+  <style>
+    .header {
+      font-size: 5vw;
+      margin-left: 7vw;
+      color: aquamarine;
+    }
+
+    .register {
+      margin-left: 20vw;
+      padding-top: 5vw;
+    }
+
+    .form2 {
+      font-size: 1.5vw;
+      color: aquamarine;
+    }
+
+    #uname {
+      padding: .25vw;
+      font-size: 1.5vw;
+    }
+
+    #pass_word {
+      padding: .25vw;
+      font-size: 1.5vw;
+    }
+
+    .btn2 {
+      margin-left: 6vw;
+      margin-top: 1.5vw;
+      font-size: 1.5vw;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .para1 {
+      font-size: 2vw;
+    }
+
+    body {
+      background-image: url('https://wallpaperset.com/w/full/b/a/6/45477.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+
+  <body>
+    <h1 class="header">
+      Log In To Your Account
+    </h1>
+    <div class="register">
+      <form class="form2" method="POST">
+        <label for="uname">Username</label><br>
+        <input type="text" id="uname" name="Uname"> <br>
+        <label for="pass_word">Password</label><br>
+        <input type="password" id="pass_word" name="Password"><br>
+        <button type="button" onclick="loginFunction()" class="btn2"> Log in</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    function loginFunction() {
+      var username = document.getElementById('uname').value;
+      var password = document.getElementById('pass_word').value;
+      var storedData = localStorage.getItem("formData");
+      if (storedData) {
+        var parsedData = JSON.parse(storedData);
+        var storedUsername = parsedData.username;
+        var storedPassword = parsedData.password;
+        if (username === storedUsername && password === storedPassword) {
+          alert("Login Successful");
+          window.location.href = "Main.html";
+        } else {
+          alert("Invalid username or password");
+
+        }
+      } else {
+        alert("No user data found");
+
+      }
+    }
+  </script>
+
+</html>
